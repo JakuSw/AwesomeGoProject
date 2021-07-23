@@ -39,6 +39,7 @@ func main() {
 	}
 	fmt.Println("Starting migration")
 	db.AutoMigrate(&Article{})
+	fmt.Println("Migration done!")
 
 	router := mux.NewRouter()
 	router.HandleFunc("/articles", getArticles).Methods("GET")
