@@ -4,9 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/gorilla/mux"
-	"gorm.io/driver/sqlite"
+	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"net/http"
+	"os"
 )
 
 var db *gorm.DB
@@ -33,7 +34,7 @@ func getArticles(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	db, err = gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
+	db, err = gorm.Open(mysql.Open(os.Getenv("ConnectionString")), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
