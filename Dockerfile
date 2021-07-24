@@ -2,7 +2,7 @@ FROM ubuntu
 
 WORKDIR /
 
-COPY . .
+COPY ./controller .
 
 EXPOSE 8000
 
