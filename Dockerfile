@@ -6,4 +6,4 @@ COPY . .
 
 EXPOSE 8000
 
-ENTRYPOINT ["/controller"]
+ENTRYPOINT ["/bin/bash"]
